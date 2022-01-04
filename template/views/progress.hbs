@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+      crossorigin="anonymous"
+    />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/prog.css" class="">
+</head>
+<body>
+
+{{>header}}
+
+ 
+<table>
+
+<tr>
+<th>Type</th>
+<th>Score</th>
+<th>Played Time</th>
+<th></th>
+</tr>
+
+{{#each task}}
+        <tr>
+<td>{{this.tour}}</td>
+<td>{{this.score}} {{#if this.outof}} / {{this.outof}} {{/if}} </td>
+<td class="time" >{{this.createdAt}}</td>
+<td><a  href="/progress/{{this._id}}"  ><i class="fa fa-trash-o ii" id="d0" aria-hidden="true"></i></a></td>
+
+</tr>
+    {{/each}}
+
+
+</table>
+
+
+<a class="delete"  id="del" href="/progress/delete"  ><h4  >Clear History</h4></a>
+
+
+</body>
+</html>

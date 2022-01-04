@@ -1,0 +1,1 @@
+$(".second").css("display","flex");

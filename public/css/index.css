@@ -1,0 +1,254 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(22, 3, 39);
+  }
+  .main{
+  
+  width: 100%;
+  height: 100%;
+  background-color: rgb(22, 3, 39);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 140px;
+  
+  }
+  
+  
+  .second,.secondg{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    
+    align-items: center;
+  
+  }
+  .secondg{
+    position: absolute;
+    width: 100%;
+    margin: auto;
+    top:30%;
+    position:absolute;
+  top:20%; bottom:20%
+  }
+  .secondinside,.secondinsideg{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .secondh1,.secondh1g{
+    margin-bottom: 120px;
+  }
+  .mainbutton1{
+  
+  font-size: 2.8rem;
+  padding: 0px 20px;
+  border-radius: 20px;
+  margin: 20px;
+  background-image: linear-gradient(120deg, transparent 0%, transparent 50%, red 50%);
+  background-size: 230%;
+  padding: 0px 20px;
+  transition: all 0.3s ease 0s;
+  
+  }
+  .mainbutton1g{
+  
+    font-size: 2.8rem;
+    padding: 0px 20px;
+    border-radius: 20px;
+    margin: 20px;
+    background-image: linear-gradient(120deg, transparent 0%, transparent 50%, red 50%);
+    background-size: 230%;
+    padding: 0px 20px;
+    transition: all 0.3s ease 0s;
+    
+    }
+  .mainbutton:hover{
+    background-size: 100%;
+  }
+  .newbutton1{
+    background-color: transparent;
+    border: transparent;
+    position: absolute;
+    top:1%;
+    right: 1%;
+    display: none;
+    margin: 5px;
+    color: white;
+    font-size: 2rem;
+  }
+  #mainmath{
+    font-size: 8rem;
+    color: rgb(85, 173, 255);
+  }
+  .conth1{
+    font-size: 4rem;
+  }
+  .mainbutton{
+    width: 15%;
+    border-radius: 28px;
+    height: 50px;
+  font-size: 40px;
+  display: flex;
+  background-image: linear-gradient(120deg, transparent 0%, transparent 50%,rgb(85, 173, 255) 50% );
+  background-size: 230%;
+  padding: 0px 20px;
+  transition: all 0.3s ease 0s;
+  justify-content: center;
+  align-items: center;
+  }
+  .mainbutton:hover{
+    background-size: 100%;
+    transform: translateY(-8px);
+    box-shadow: 5px 5px 2px 2px rgba(0, 0, 0, 0.486);
+  
+  }
+  .mainh1{
+    background-color: none;
+    font-size: 6rem;
+    
+  }
+  button:hover{
+    cursor: pointer;
+  }
+  .cont{
+    display: none;
+  margin-bottom: 20px;
+  
+  }
+  .new{
+    display: none;
+    flex-direction: column;justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+  
+  }
+  
+  .newbutton{
+  color: white;
+  font-size: 5rem;
+  background-color: transparent;
+  border: transparent;
+  }
+  .box {
+    padding: 10px;
+    background-color: rgb(100, 6, 138);
+    border: 2px solid black;
+    width: 70%;
+    margin: 10px auto;
+    padding: 20px;
+    font-size: 2rem;
+    color: white;
+  }
+  h1 {
+    font-size: 4rem;
+    text-align: center;
+    margin: 80px;
+    color: white;
+    font-family: cursive;
+  }
+  .ques {
+    width: 100%;
+    margin: 10px;
+  
+    text-align: center;
+  }
+  .ans {
+    width: 35%;
+    font-size: 2rem;
+    color: black;
+    border-radius: 10px;
+    margin: 10px;
+    background-color: cornsilk;
+    padding: 10px;
+    border: 1px solid black;
+    display: inline-block;
+    cursor: pointer;
+    text-align: left;
+  }
+  .timer {
+    border-radius: 50%;
+    background-color: white;
+    color: black;
+    text-align: center;
+  
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 80px;
+    height: 80px;
+  }
+  .t1 {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+  .quess {
+    color: white;
+    font-size: 4rem;
+  }
+  .gameover {
+    background-color: red;
+  }
+  .press {
+    background-color: rgba(0, 0, 0, 0.466);
+    box-shadow: 1px 1px 5px 2.5px white;
+  }
+  .tttt {
+    text-align: center;
+    font-size: 3rem;
+  }
+  .right {
+    background-color: rgb(6, 189, 6);
+    color: white;
+  }
+  .wrong {
+    background-color: red;
+    color: white;
+  }
+  .widthse {
+    width: auto;
+  }
+  .math {
+    color: coral;
+    font-size: 6rem;
+  }
+  footer {
+    margin: 15px;
+    text-align: center;
+    color: white;
+    position:absolute;
+    bottom: 1%;
+   
+    text-align: center;
+  }
+  
+  .foo{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  
+  }
+  .btn {
+    text-align: center;
+  }
+  .bt {
+    background-color: cornflowerblue;
+    color: white;
+    padding: 12x;
+    border: 1px solid black;
+    border-radius: 40px;
+    font-size: 3rem;
+    transition: background-color 0.7s ease;
+    margin-bottom: 20px;
+  }
+  .bt:hover {
+    background-color: black;
+    cursor: pointer;
+  }
+  
