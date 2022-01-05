@@ -8,7 +8,7 @@ const path=require('path')
 const auth=require('./auth')
 var cookieParser = require('cookie-parser')
 const port=process.env.PORT
-const tempUrl=path.join(__dirname,'/template/views')
+const tempyUrl=path.join(__dirname,'/template/views')
 app.use(cookieParser());
 app.set('view engine', 'hbs');
 
