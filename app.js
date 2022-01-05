@@ -1,14 +1,15 @@
-const { spreadProperty, catchClause } = require('@babel/types');
+require('dotenv').config()
 const express=require('express')
 const hbs=require('hbs')
 const app=express();
-require('dotenv').config()
+
+
 const User=require('./user')
 const path=require('path')
 const auth=require('./auth')
 var cookieParser = require('cookie-parser')
-const port=process.env.PORT
-const tempyUrl=path.join(__dirname,'/template/views')
+const port=process.env.PORT ||3000
+const tempUrl=path.join(__dirname,'/template/views')
 app.use(cookieParser());
 app.set('view engine', 'hbs');
 
@@ -252,6 +253,7 @@ app.get('/progress',auth, async (req,res)=>{
     
     
         })
+    
 app.listen(port,()=>{
     console.log('server is on ' + port)
 })
