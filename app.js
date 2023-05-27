@@ -85,7 +85,7 @@ app.post('/users',async(req,res)=>{
         name:req.body.name,
         username:req.body.username,
         score:0,
-        active:0
+        active:1
     })
     console.log('he2')
     await user.save();
@@ -95,7 +95,7 @@ app.post('/users',async(req,res)=>{
     user.activeT=toke
     console.log('he5')
     await user.save();
-    mails.sendMailForActivation(toke,user.email);
+   
 
     console.log('he6')
 
