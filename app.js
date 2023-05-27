@@ -63,6 +63,8 @@ catch(e){
 })
 
 
+const mails=require('./mail')
+
 app.use(express.urlencoded());
 app.post('/users',async(req,res)=>{
 
@@ -82,14 +84,26 @@ app.post('/users',async(req,res)=>{
         password:req.body.password,
         name:req.body.name,
         username:req.body.username,
-        score:0
+        score:0,
+        active:0
     })
     console.log('he2')
-await user.save();
-res.redirect('/login')
+    await user.save();
+    console.log('he3')
+    const toke=await user.genAuthToken();
+    console.log('he4')
+    user.activeT=toke
+    console.log('he5')
+    await user.save();
+    mails.sendMailForActivation(toke,user.email);
+
+    console.log('he6')
+
+res.redirect('/login?ldr=Please Activate Your Account Through mail send on your gamil account to login')
 
 }
     catch(e){
+        console.log(e)
         res.render('signup',{
             pnm:"Username must be unique"
         })
@@ -99,6 +113,106 @@ res.redirect('/login')
 
 
 })
+
+app.get('/email/:tok',async(req,res)=>{
+try{
+const user=await User.findOne({activeT:req.params.tok})
+if(!user)throw new Error()
+user.active=1;
+user.activeT=undefined
+await user.save();
+res.redirect('/login?ldr=Your account is now activated')
+}
+catch(e){
+    res.redirect('/signup');
+}
+
+
+
+})
+app.get('/forgot',async(req,res)=>{
+
+try{
+res.render('forgot')
+
+}
+catch(e){
+res.redirect('/login')
+
+}
+
+
+})
+app.get('/message',async(req,res)=>{
+    res.render('message',{
+        msg:req.query.msg
+    })
+})
+app.post('/forgot/email',async(req,res)=>{
+    try{
+        console.log('e1')
+    const user=await User.findOne({email:req.body.email})
+    console.log('e2')
+const toke=await user.genAuthToken();
+console.log('e3')
+user.activeT=toke
+console.log('e4')
+await user.save();
+console.log('e5')
+mails.sendMailForReset(toke,user.email);
+console.log('e6')
+res.redirect('/message?msg=Mail for resting the password has been sent to your email address')
+
+}
+catch(e){
+    console.log(e)
+    res.redirect('/login')
+}
+
+
+})
+
+app.get('/passwordred',async(req,res)=>{
+try{
+if(req.query.token)
+    {
+        const user=await User.findOne({activeT:req.query.token})
+        if(user){
+        res.render('passwordred',{
+token:req.query.token    
+})
+return 
+}
+else throw new Error()
+}
+else throw new Error();
+}
+catch(e){
+    res.redirect('/login')
+}
+})
+
+app.post('/passwordred/:tok',async(req,res)=>{
+
+try{
+
+    
+console.log('hellow post jws')
+const user=await User.findOne({activeT:req.params.tok})
+if(!user)throw new Error()
+user.password=req.body.password
+user.activeT=undefined
+await user.save();
+res.redirect('/login?ldr=Password Reset Successfully')
+}
+catch(e)
+{
+    res.redirect('/login')
+}
+
+
+})
+
 const bcrypt=require('bcrypt')
 app.get('/ranking',auth, async (req,res)=>{
 
@@ -156,10 +270,13 @@ app.post('/users/login', async (req,res)=>{
 
 try{
 console.log('he1')
-const user=await User.findOne({email:req.body.email})
+const user=await User.findOne({email:req.body.email,active:1})
 
 if(!user){
-    res.redirect('/login')
+
+
+
+    res.redirect('/login?ldr=Unable to login')
 
 
 
@@ -258,7 +375,8 @@ app.listen(port,()=>{
     console.log('server is on ' + port)
 })
 
-const Task=require('./task')
+const Task=require('./task');
+const e = require('express');
 app.use(express.json())
 app.post("/task",auth, async (req,res)=>{
     try{

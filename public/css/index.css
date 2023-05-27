@@ -1,13 +1,13 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: rgb(22, 3, 39);
+    background-image: linear-gradient(to right,rgba(0, 0, 0, 0.458), rgba(0, 0, 0, 0.403)), url(https://i.pinimg.com/564x/e9/a5/c4/e9a5c4e32b37902dc3c7750a69cf0c6b.jpg) !important;
+ background-size: cover;
   }
   .main{
   
   width: 100%;
   height: 100%;
-  background-color: rgb(22, 3, 39);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,8 +15,25 @@ body {
   margin-top: 140px;
   
   }
-  
-  
+  .mainbutton{
+    background-color: transparent !important;
+    border: 2px solid white !important;
+    box-shadow: 0 0 10px 4px #fff;
+    color: white;
+    padding-left: 2.8rem !important;
+    padding-right: 2.8rem !important;
+    
+    
+  }
+  .mainbutton1g,.mainbutton1{
+    box-shadow: 0 0 10px 4px #fff;
+    background-color: rgba(0, 0, 0, 0.207) !important;
+    border: 2px solid white !important;
+    color: white;
+    padding-left: 2.8rem !important;
+    padding-right: 2.8rem !important;
+
+  }
   .second,.secondg{
     display: none;
     flex-direction: column;
@@ -26,11 +43,11 @@ body {
   
   }
   .secondg{
-    position: absolute;
+    
     width: 100%;
     margin: auto;
     top:30%;
-    position:absolute;
+    margin-top: 18%;
   top:20%; bottom:20%
   }
   .secondinside,.secondinsideg{
@@ -87,8 +104,9 @@ body {
   .conth1{
     font-size: 4rem;
   }
+  
   .mainbutton{
-    width: 15%;
+   
     border-radius: 28px;
     height: 50px;
   font-size: 40px;
@@ -135,8 +153,9 @@ body {
   }
   .box {
     padding: 10px;
-    background-color: rgb(100, 6, 138);
-    border: 2px solid black;
+    background-color: rgb(0, 0, 0,0.4);
+    border: 2px solid white;
+    box-shadow: 0 0 20px 8px rgba(255, 255, 255, 0.527);
     width: 70%;
     margin: 10px auto;
     padding: 20px;
@@ -147,8 +166,13 @@ body {
     font-size: 4rem;
     text-align: center;
     margin: 80px;
+    
     color: white;
     font-family: cursive;
+  }
+  .hhhhh{
+    margin-top: 134px;
+    margin-bottom: 60px !important;
   }
   .ques {
     width: 100%;
@@ -156,6 +180,7 @@ body {
   
     text-align: center;
   }
+  
   .ans {
     width: 35%;
     font-size: 2rem;
@@ -204,11 +229,11 @@ body {
     font-size: 3rem;
   }
   .right {
-    background-color: rgb(6, 189, 6);
+    background-color: rgb(6, 189, 6) !important;
     color: white;
   }
   .wrong {
-    background-color: red;
+    background-color: red !important;
     color: white;
   }
   .widthse {
@@ -238,10 +263,10 @@ body {
     text-align: center;
   }
   .bt {
-    background-color: cornflowerblue;
+    background-color: rgba(0, 0, 0, 0.199);
     color: white;
-    padding: 12x;
-    border: 1px solid black;
+    padding: 12x 20px; 
+    border: 1px solid white;
     border-radius: 40px;
     font-size: 3rem;
     transition: background-color 0.7s ease;
@@ -251,4 +276,14 @@ body {
     background-color: black;
     cursor: pointer;
   }
-  
+  @media all and (max-width:600px) {
+    #mainmath{
+      font-size: 4rem;
+    }
+    .mainh1{
+      font-size: 2.8rem;
+    }
+    .mainbutton{
+      font-size: 28px;
+    }
+  }

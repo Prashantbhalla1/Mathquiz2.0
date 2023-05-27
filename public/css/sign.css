@@ -3,8 +3,7 @@ form{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    margin: auto;
+    margin-left: 7.5%;
     margin-top: 40px;
     position:absolute;
   top:20%; bottom:20%
@@ -17,7 +16,12 @@ input{
     border-radius: 10px;
 }
 body{
-    background-color: rgb(22, 3, 39);
+    background-image: linear-gradient( 
+110deg
+, transparent 40%, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.33) 38% ), url(https://png.pngtree.com/thumb_back/fh260/background/20200604/pngtree-cute-hand-drawn-style-mathematics-education-green-stripes-background-image_337566.jpg);
+
+background-size: cover;
+height: 100vh;
 }
 p{
     color: white;
@@ -29,7 +33,10 @@ a{
     
 }
 a:hover{
-    color: turquoise;
+    color: black;
+}
+.forgotttt{
+    font-size: 0.85rem;
 }
 button{
   
@@ -45,6 +52,17 @@ button:hover{
     cursor: pointer;
 }
 .msg{
-    color:turquoise;
+    color:black;
+    border: 1px solid white;
+    margin: 5px;
+    margin-top: 20px;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.156);
     font-size: 1.4rem;
+    color: white;
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }

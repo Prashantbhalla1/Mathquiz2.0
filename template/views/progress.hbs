@@ -20,19 +20,22 @@
  
 <table>
 
-<tr>
+
+    
+        <tr class="cont" >
 <th>Type</th>
 <th>Score</th>
 <th>Played Time</th>
+
 <th></th>
 </tr>
 
 {{#each task}}
         <tr>
-<td>{{this.tour}}</td>
-<td>{{this.score}} {{#if this.outof}} / {{this.outof}} {{/if}} </td>
-<td class="time" >{{this.createdAt}}</td>
-<td><a  href="/progress/{{this._id}}"  ><i class="fa fa-trash-o ii" id="d0" aria-hidden="true"></i></a></td>
+<td class="e" >{{this.tour}}</td>
+<td class="e" >{{this.score}} {{#if this.outof}} / {{this.outof}} {{/if}} </td>
+<td class="time e"  >{{this.createdAt}}</td>
+<td class="e" ><a  href="/progress/{{this._id}}"  ><i class="fa fa-trash-o ii" id="d0" aria-hidden="true"></i></a></td>
 
 </tr>
     {{/each}}

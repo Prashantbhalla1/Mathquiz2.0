@@ -17,6 +17,9 @@ trim:true
         type:String,
         required:true
     },
+    activeT:{
+        type:String
+    },
     tokens:[
         {
             token:{
@@ -34,13 +37,18 @@ trim:true
     score:{
         type:Number,
         required:true
+    },
+    
+    active:{
+        type:Boolean,
+        required:true
     }
 })
 const jwt=require('jsonwebtoken')
 userSchema.methods.genAuthToken=async function(){
     const user=this
     console.log('hee1')
-    const token=jwt.sign({_id:user._id.toString()},process.env.SECRET)
+    const token=jwt.sign({_id:user._id.toString()},'thisismehellowbabyyo')
     console.log('hee2')
     user.tokens=user.tokens.concat({token})
     console.log('hee3')

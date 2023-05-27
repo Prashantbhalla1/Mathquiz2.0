@@ -7,7 +7,7 @@ const token=req.cookies.jwt
 if(!token){
     throw new Error()
 }
-const aa=jwt.verify(token,process.env.SECRET)
+const aa=jwt.verify(token,'thisismehellowbabyyo')
 const user=await User.findOne({_id:aa._id,'tokens.token':token})
 if(!user)throw new Error() 
 console.log(user)
